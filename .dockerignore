@@ -1,0 +1,13 @@
+node_modules
+Dockerfile
+.dockerignore
+.gitignore
+.git
+README.md
+LICENSE
+.vscode
+.yarn/*
+!.yarn/releases
+biome.json
+**/*.test.*
+build
