@@ -1,7 +1,0 @@
-{
-  "search.exclude": {
-    "**/.yarn": true
-  },
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "biomejs.biome"
-}

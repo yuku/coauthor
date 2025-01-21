@@ -1,0 +1,29 @@
+{
+	"name": "coauthor",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+  "runArgs": ["--name=coauthor", "--rm"],
+  "mounts": [
+    "source=coauthor-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "biomejs.biome",
+        "EditorConfig.EditorConfig",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "search.exclude": {
+          "**/.yarn": true
+        },
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "biomejs.biome"
+      }
+    }
+  },
+  // https://github.com/microsoft/vscode-remote-release/issues/9931
+  "postCreateCommand": "sudo chown -R $(whoami): ${containerWorkspaceFolder}/node_modules && yarn install"
+}
